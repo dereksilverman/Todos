@@ -1,18 +1,10 @@
 require 'debugger'
 
-def fibo_finder(n)
-  if n == 0
-    return 0
-  elsif n == 1
-    return 1
-  else
-    array = [0,1]
-    (n-1).times do
-      array << array[-1] + array[-2]
-    end
-  end
-  return array.last
+def fibo_finder(n)  
+  array = [0,1]
+    n.times{|i| array[i + 2] = array[i] + array[i + 1]}
+  array[n]
 end
 
-puts fibo_finder(90)
+puts fibo_finder(3)
 
